@@ -1,6 +1,6 @@
-1. $this keyword isn't available inside the static method becuase it can be accessed from outside. use self instead.
+1. $this keyword isn't available inside the static method . use self instead.For accesssing the static properties or method you have to use self:: from inside the class.
 
-2. static properties can't be accessed using the $this keyword in the whole class use self instead
+2. scope resolution operator(::) can used in case of constant, static or overriding properties or methods
 
 3.print returns 1 always whether there is a successful print or not.
 
