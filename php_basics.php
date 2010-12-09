@@ -120,3 +120,85 @@ switch($a):
 		 ?>
 		 
 		 19. always use alternative syntax for the loops for more readability
+		 
+		 20. Every object has it's own unique property values if it isn't cloned or copied(which is by refrerence default) 
+		 
+		 <?php
+		 
+		 class a{
+			 public static $a=7;
+			 public $b;			 
+			 }			 
+			 $c=new a;
+			 $m=$c;
+			 $cloned=clone $c;
+			 $c->b='maimai';
+			 $cloned1=clone $c;
+			 $d=new a;
+			 echo $c->b.'copied after  '.$m->b.'new object  '.$d->b.' cloned before '.$cloned->b.'cloned after '.$cloned1->b;
+			 
+			 echo a::$a;
+			 a::$a=9;
+			 echo a::$a;
+		 
+		 ?>
+		 
+		 21. Making a class constructor private is a clever method to stop the instatiation of the class from outsitde the class. It's also a method of implementing the singleton feature.
+		 
+		 <?php
+		 class geo{
+			 public $a;
+			 protected $b;
+			 protected function __construct(){
+			 $this->a=4;
+			 $this->b=6;		
+		 }
+			 
+			 }
+			 
+			 //$p=new geo; trying to instantiate the object will cause a fatal error
+			 
+		 ?>
+		 so what's to do mr. wise? Let's try again. Only way to do this is to make a static function to return the self object, right? and there is no choice withoout making $b static in the following example because 
+		 $this keyword isn't avaiable inside static methods.
+		 
+		 
+		 
+		 	<?php
+		 	 class george{
+			 public $a;
+			 protected static $b=null;
+			 
+			 protected function __construct(){
+			 $this->a=4;
+			 }
+			 public static function makeInstance(){
+				 if(self::$b==null)//commenting this line will fail the singleton feature
+				 return self::$b=new self();// you can also use return new self();but that's why its singleton
+				 }			 
+			 }
+			 
+			 $gotInstance=george::makeInstance();
+			 echo $gotInstance->a;
+			 
+			 $gotInstance2=george::makeInstance();// it will have returned nothing due to class declaration
+			echo $gotInstance2->a;// it will generate a notice  that trying to get value from non object
+		
+			 ?>
+			 If you have difficulties understanding the example defined above try this. the the self::b is called the $b value is changed so it won't return any more object. try this one
+			 <?php
+			 
+			 class mark{
+				 public static $m=null;
+				 
+				 function __construct(){
+					 echo self::$m;
+					 }				 
+				 }
+				 mark::$m=5;
+				 $abs=new mark;
+			 
+			 ?>		
+			 
+			 21. As you see from the code self is important to remember;	 
+		 
