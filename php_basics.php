@@ -243,5 +243,5 @@ function &refCheck(&$a){
 	
 	//functions can return reference too
 ?>
-
+24. checkin git in java_included now
 		 
