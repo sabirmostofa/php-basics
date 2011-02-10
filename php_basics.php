@@ -172,17 +172,19 @@ switch($a):
 			 protected function __construct(){
 			 $this->a=4;
 			 }
+			 
+			 //my example may have  a problem this method allows only to allow a object at a time but zend singleton my have many objects at a time
 			 public static function makeInstance(){
 				 if(self::$b==null)//commenting this line will fail the singleton feature
 				 return self::$b=new self();// you can also use return new self();but that's why its singleton
 				 }			 
 			 }
 			 
-			 $gotInstance=george::makeInstance();
+			 var_dump($gotInstance=george::makeInstance());
 			 echo $gotInstance->a;
 			 
-			 $gotInstance2=george::makeInstance();// it will have returned nothing due to class declaration
-			echo $gotInstance2->a;// it will generate a notice  that trying to get value from non object
+			 var_dump($gotInstance2=george::makeInstance());// it will have returned nothing due to class declaration
+			//echo $gotInstance2->a;// it will generate a notice  that trying to get value from non object
 		
 			 ?>
 			 If you have difficulties understanding the example defined above try this. the the self::b is called the $b value is changed so it won't return any more object. try this one
