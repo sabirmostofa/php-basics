@@ -243,5 +243,10 @@ function &refCheck(&$a){
 	
 	//functions can return reference too
 ?>
+<<<<<<< HEAD
 24. checkin git in java_included now
 		 
+=======
+
+		24.testing git in the orgin1 branch now 
+>>>>>>> orgin1
