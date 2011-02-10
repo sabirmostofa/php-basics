@@ -200,5 +200,46 @@ switch($a):
 			 
 			 ?>		
 			 
-			 21. As you see from the code self is important to remember;	 
+			 21. As you see from the code self is important to remember;	
+			 
+			 22. you can call function with more arguments than defined*******
+			 <?php 
+			 
+		   function  arg_test(){
+			   //$num_arg=func_num_args();
+			   $args=func_get_args();
+			   foreach($args as $arg)
+			   echo $arg;
+			   echo '\n';
+			   echo func_num_args();
+			   } 
+			   arg_test(3,4,5);
+			   $a=3;
+			   // See how to work with variables inside magic_quote
+			   
+			   echo "${a}_to_bans$a";
+			 
+			 ?>
+
+
+23. Let's go back to functions in php. php has interresting features. you can pass parameters to a function by reference and the funtion can also return the reference.Let's checkout the following example.
+Note that when returning by reference you have to use ampersand in both places
+<?php
+// The function changes the variable $b
+function &refCheck(&$a){
+	$a=4;
+	return $a;
+	
+	}
+	$b=3;
+	$c=&refCheck($b);
+	echo $b;
+	
+	$c=10;
+	
+	echo 'after returned from function'.' '.$b;
+	
+	//functions can return reference too
+?>
+
 		 
