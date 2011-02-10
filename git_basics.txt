@@ -1,0 +1,7 @@
+
+***** Most important feature is If you create different branches you can view the previous code by only git checkout to the branch*********
+1. two files containin different lines in a point will fail to merge.
+2. git checkout git stat
+3. git log --stat --summary is useful
+4.gitk is a useful gui tool to analyse the changes
+
