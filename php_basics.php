@@ -242,4 +242,12 @@ function &refCheck(&$a){
 	//functions can return reference too
 ?>
 
+24. Checkout  the different array and string functions. They can be very useful
+array_pop()
+array_push()
+array_slice()
+are some of those
+
+
+
 		 
