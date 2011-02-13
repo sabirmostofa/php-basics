@@ -242,4 +242,6 @@ function &refCheck(&$a){
 	//functions can return reference too
 ?>
 
+24. Make branches like hell in git.It seems like offtopic but I am working with git now and its very useful.
+
 		 
