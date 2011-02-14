@@ -244,4 +244,19 @@ function &refCheck(&$a){
 
 24. Make branches like hell in git.It seems like offtopic but I am working with git now and its very useful.
 
+25.When you call a non-static function as static then the script will show you stirct standard message. The frameworks use this for singleton.
+ The reason to call the non static function as static is that you can debug the code better.
+
+<?php
+
+class StaticTest{
+ function stat_test(){
+              echo 'hello';
+		}
+
+	}
+	StaticTest::stat_test();
+
+?>
+
 		 
